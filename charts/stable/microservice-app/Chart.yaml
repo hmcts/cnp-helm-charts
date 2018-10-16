@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A Helm chart for HMCTS Microservices
+name: hmcts-microservice
+version: 0.0.1
