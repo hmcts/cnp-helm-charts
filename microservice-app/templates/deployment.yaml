@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.serviceName }}
+  namespace: {{ .Values.serviceName }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.serviceName }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.serviceName }}
+    spec:
+      containers:
+      - image: {{ .Values.image }}
+        name: {{ .Values.serviceName }}
+        env:
+          {{- range $key, $val := .Values.environment }}
+          {{ $key }}: {{ $val | quote }}
+          {{- end}}
+        envFrom:
+          - configMapRef:
+              name: {{ .Values.serviceName }}
+        resources:
+          requests:
+            memory: {{ .Values.resources.requests.memory }}
+            cpu: {{ .Values.resources.requests.cpu }}
+          limits:
+            memory: {{ .Values.resources.limits.memory }}
+            cpu: {{ .Values.resources.limits.cpu }}
+        ports:
+        - containerPort: {{ .Values.applicationPort }}
+          name: http
+        imagePullPolicy: Always
+      {{- if .Values.postgres.enabled }}
+      - image: {{ .Values.postgres.image }}
+        name: postgres
+        env:
+          {{- range $key, $val := .Values.postgres.config }}
+          {{ $key }}: {{ $val | quote }}
+          {{- end}}
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "200m"
+          limits:
+            memory: "1024Mi"
+            cpu: "1000m"
+        imagePullPolicy: Always
+      {{- end }}
