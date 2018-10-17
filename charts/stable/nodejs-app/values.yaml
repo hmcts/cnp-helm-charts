@@ -1,0 +1,13 @@
+# Defaults
+applicationPort: 3000
+environment:
+memoryRequests: "64Mi"
+cpuRequests: "200m"
+memoryLimits: "256Mi"
+cpuLimits: "500m"
+    
+# Don't modify below here
+namespace: ${NAMESPACE}
+serviceName: ${SERVICE_NAME}
+image: ${IMAGE_NAME}
+ingressHost: ${SERVICE_FQDN}

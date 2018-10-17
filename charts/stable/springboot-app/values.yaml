@@ -1,0 +1,23 @@
+applicationPort: 8080
+environment:
+configmap:
+memoryRequests: "512Mi"
+cpuRequests: "200m"
+memoryLimits: "1024Mi"
+cpuLimits: "2500m"
+    
+postgres:
+  enabled: false
+#  image: postgres:10-alpine
+#  config:
+#    POSTGRES_HOST: localhost
+#    POSTGRES_USER: hmcts
+#    POSTGRES_PASSWORD: hmcts
+#    POSTGRES_DB: hmcts
+    
+# Don't modify below here
+namespace: ${NAMESPACE}
+serviceName: ${SERVICE_NAME}
+image: ${IMAGE_NAME}
+ingress:
+  host: ${SERVICE_FQDN}
