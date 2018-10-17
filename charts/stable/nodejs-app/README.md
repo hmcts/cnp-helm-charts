@@ -37,7 +37,7 @@ ingressHost: custard-helm.service.core-compute-saat.internal
 ```
 
 ## Install on Sandbox
-First configure your Helm client according to the [docs](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-helm-repos#add-a-repository-to-helm-client).
+First configure your Helm client according to the [docs](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-helm-repos#add-a-repository-to-helm-client), using `hmctssandbox` as your ACR.
 
 Then to install:
 ```
