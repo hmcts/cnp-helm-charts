@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A Helm chart for a VSTS agent
+name: vsts-agent
+version: 0.0.1
