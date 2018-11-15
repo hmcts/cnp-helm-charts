@@ -16,8 +16,8 @@ postgres:
 #    POSTGRES_DB: hmcts
     
 # Don't modify below here
-namespace: ${NAMESPACE}
-serviceName: ${SERVICE_NAME}
-image: ${IMAGE_NAME}
+namespace: {{NAMESPACE}}
+serviceName: {{SERVICE_NAME}}
+image: {{IMAGE_NAME}}
 ingress:
-  host: ${SERVICE_FQDN}
+  host: {{SERVICE_FQDN}}
