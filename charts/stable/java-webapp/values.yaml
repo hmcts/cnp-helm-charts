@@ -1,6 +1,6 @@
 applicationPort: 8080
-#environment:
-#configmap:
+environment:
+configmap:
 memoryRequests: "512Mi"
 cpuRequests: "200m"
 memoryLimits: "1024Mi"
@@ -16,8 +16,8 @@ postgres:
 #    POSTGRES_DB: hmcts
     
 # Don't modify below here
-namespace: {{ .Values.NAMESPACE }}
-serviceName: {{ .Values.SERVICE_NAME }}
-image: {{ .Values.IMAGE_NAME }}
+namespace:
+serviceName: 
+image: 
 ingress:
-  host: {{ .Values.SERVICE_FQDN }}
+  host: 
