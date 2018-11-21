@@ -1,4 +1,8 @@
-# Generic Microservice
+# Generic java-webapp microservice
+
+This chart should be used by simple java microservices.
+
+We will take small PRs and small features to this chart but more complicated needs should be handled in your own chart or another chart here that may extend this one.
 
 ## Example configuration
 ```
@@ -22,9 +26,9 @@ The following table lists the configurable parameters of the java-webapp chart a
 | Parameter                               | Description                                                                                  | Default                                     |
 | --------------------------------------- | -------------------------------------------------------------------------------------------- | ------------------------------------------- |
 | `applicationPort`                  | The port your app runs on in its container                                                                 | `8080`                                       |
-| `image`                        | Full image url, i.e hmcts.azurecr.io/hmcts/cnp-rhubarb-recipes-service:pr-110                                                                       | `nil`                                 |
+| `image`                        | Full image url, i.e `hmcts.azurecr.io/hmcts/cnp-rhubarb-recipes-service:pr-110`                                                                       | `nil`                                 |
 | `environment`                      | A map containing all environment values you wish to set                                                                           | `nil`                           |
-| `configmap`                             | A config map, can be used for environment specific config                                                                            | `{VERSION}`                                 |
+| `configmap`                             | A config map, can be used for environment specific config                                                                            | `nil`                                 |
 | `memoryRequests`                      | Requests for memory                                                                            | `512Mi`                                    |
 | `cpuRequests`                     | Requests for cpu                                                                   | `200m`                                       |
 | `memoryLimits`                           | Memory limits                                                               | `512Mi`                                      |
