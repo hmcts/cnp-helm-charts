@@ -5,13 +5,6 @@ environment:
   POSTGRES_HOST: localhost
   POSTGRES_SSL_MODE: disable
   POSTGRES_DATABASE: rhubarb
-resources:
-  requests:
-    memory: "512Mi"
-    cpu: "200m"
-  limits:
-    memory: "1024Mi"
-    cpu: "2500m"
 configmap:
   POSTGRES_HOST: localhost
   POSTGRES_SSL_MODE: disable
