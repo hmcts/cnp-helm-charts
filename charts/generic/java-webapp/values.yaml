@@ -1,11 +1,15 @@
 applicationPort: 8080
 environment:
 configmap:
-memoryRequests: "512Mi"
-cpuRequests: "200m"
-memoryLimits: "1024Mi"
-cpuLimits: "2500m"
-    
+resources:
+  requests:
+    memory: "512Mi"
+    cpu: "200m"
+resources:
+  limits:
+    memory: "512Mi"
+    cpu: "200m"
+
 postgres:
   enabled: false
 #  image: postgres:10-alpine
