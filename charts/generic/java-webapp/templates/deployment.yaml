@@ -29,11 +29,11 @@ spec:
         {{- end }}
         resources:
           requests:
-            memory: {{ .Values.resources.requests.memory }}
-            cpu: {{ .Values.resources.requests.cpu }}
+            memory: {{ .Values.memoryRequests }}
+            cpu: {{ .Values.cpuRequests }}
           limits:
-            memory: {{ .Values.resources.limits.memory }}
-            cpu: {{ .Values.resources.limits.cpu }}
+            memory: {{ .Values.memoryLimits }}
+            cpu: {{ .Values.cpuLimits }}
         ports:
         - containerPort: {{ .Values.applicationPort }}
           name: http
