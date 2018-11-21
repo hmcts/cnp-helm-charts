@@ -9,3 +9,6 @@ Using a generic Helm chart to install applications has the following benefits:
 * Less YAML config for teams to maintain.  Only need to contribute `values.yaml`
 * Teams can create their own charts
 * Easy cleanup (e.g. `helm delete`).  Could go back to team namespaces.
+
+## Adding a new chart
+Send a PR with your chart, if your team will be maintaining it then update the [CODEOWNERS](.github/CODEOWNERS) file with either your name or your team name.
