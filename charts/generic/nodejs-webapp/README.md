@@ -41,7 +41,7 @@ First configure your Helm client according to the [docs](https://docs.microsoft.
 
 Then to install:
 ```
-helm install --name custard-helm hmctssandbox/nodejs-app -f values.yaml
+helm install --name custard-helm hmctssandbox/nodejs-webapp -f values.yaml
 ```
 
 ## Clean up
